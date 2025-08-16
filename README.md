@@ -48,9 +48,9 @@ design, user interface design, and project management plan**.
     -   Trello Board (task management)\
     -   Proposal Presentation
 -   **Phase 2 (Development & Deployment):**
-    -   Frontend development (React.js or equivalent)\
+    -   Frontend development (Vue.js)\
     -   Backend development (Node.js/Express)\
-    -   Database implementation (MySQL/PostgreSQL)\
+    -   Database implementation (MongoDB)\
     -   Testing, debugging, deployment
 
 ------------------------------------------------------------------------
@@ -92,15 +92,15 @@ design, user interface design, and project management plan**.
 
 ## 4. System Architecture
 
--   **Frontend:** React.js, HTML, CSS, TailwindCSS/Bootstrap.\
+-   **Frontend:** Vue.js, HTML, CSS, TailwindCSS/Bootstrap.\
 -   **Backend:** Node.js with Express.\
--   **Database:** MySQL or PostgreSQL.\
--   **Deployment:** AWS / Heroku.\
+-   **Database:** MongoDB.\
+-   **Deployment:** AWS.\
 -   **Version Control:** GitHub.
 
 **High-Level Flow:**
 
-    [User Browser] <-> [Frontend: React.js] <-> [Backend: Node.js API] <-> [Database: MySQL]
+    [User Browser] <-> [Frontend: Vue.js] <-> [Backend: Node.js API] <-> [Database: MongoDB]
 
 ------------------------------------------------------------------------
 
@@ -122,7 +122,7 @@ Figma mockups.
 -   **Itinerary Page:** Display booking history and upcoming trips.\
 -   **About Page:** Static information page about the system.
 
-**Technology:** React.js, TailwindCSS/Bootstrap, Axios for API calls.
+**Technology:** Vue.js, TailwindCSS/Bootstrap, Axios for API calls.
 
 ------------------------------------------------------------------------
 
