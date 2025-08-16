@@ -1,9 +1,9 @@
 # Technical Specification Document (TSD)
 
-**Project Name:** Airline Booking System
-**Version:** 1.0
-**Date:** [Insert Submission Date\]
-**Authors:** [Insert Team Members' Names\]
+**Project Name:** Airline Booking System  
+**Version:** 1.0  
+**Date:** [Insert Submission Date]  
+**Authors:** [Insert Team Members' Names]
 
 ------------------------------------------------------------------------
 
