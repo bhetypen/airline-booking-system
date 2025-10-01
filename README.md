@@ -96,7 +96,7 @@ design, user interface design, and project management plan**.
 -   **Frontend:** Vue.js, HTML, CSS, TailwindCSS/Bootstrap.
 -   **Backend:** Node.js with Express.
 -   **Database:** MongoDB.
--   **Deployment:** AWS.
+-   **Deployment:** Docker/Caddy /hostinger
 -   **Version Control:** GitHub.
 
 **High-Level Flow:**
