@@ -157,7 +157,8 @@ The backend powers the application logic and APIs.
   BookingDate
 - **Payment**: PaymentID, BookingID, Amount, Method, Status
 
-**ERD Diagram Link:** \[Insert Link\]
+**ERD Diagram Link:** [Insert Link](https://miro.com/app/board/uXjVJFcVAaA=/?share_link_id=974983723782)
+
 
 ------------------------------------------------------------------------
 
