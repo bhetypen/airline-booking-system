@@ -181,7 +181,7 @@ The backend powers the application logic and APIs.
 - Font Sizes: Heading, Subheading, Body
 - Colors: Primary (#...), Secondary (#...), Accent (#...)
 
-**Figma Mockup Link:** \[https://www.figma.com/community/file/1558054335526468717]
+**Figma Mockup Link:** \[Figma Mockup](https://www.figma.com/community/file/1558054335526468717)
 
 ------------------------------------------------------------------------
 
