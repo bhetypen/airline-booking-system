@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+html {
+    scroll-behavior: smooth;
+}
+
+.v-application {
+    font-family: 'Montserrat', sans-serif !important;
+}
