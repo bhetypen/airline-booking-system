@@ -19,6 +19,8 @@ import router from './router'
 
 import 'vue3-toastify/dist/index.css'
 
+import VueApexCharts from "vue3-apexcharts";
+
 
 const vuetify = createVuetify({
     icons: { defaultSet: "mdi", aliases, sets: { mdi } },
@@ -48,4 +50,5 @@ createApp(App)
     })
     .use(router)
     .use(vuetify)
+    .use(VueApexCharts)
     .mount('#app')

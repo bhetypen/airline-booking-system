@@ -26,7 +26,7 @@ import DiscoverSection from "../components/landing-page/DiscoverSection.vue";
       <!-- Book Flight CTA Button -->
       <v-btn
           color="primary"
-          class="px-8 py-3 rounded-lg shadow-xl font-semibold text-lg transition-all"
+          class="px-8 py-3 shadow-xl font-semibold text-lg transition-all"
           elevation="10"
           append-icon="mdi-arrow-right"
           size="large"
