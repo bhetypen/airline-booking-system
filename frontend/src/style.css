@@ -7,3 +7,7 @@ html {
 .v-application {
     font-family: 'Montserrat', sans-serif !important;
 }
+
+.v-btn {
+    border-radius: 8px !important;
+}

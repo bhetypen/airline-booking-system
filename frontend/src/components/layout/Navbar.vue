@@ -1,13 +1,26 @@
 <script setup>
-import { ref } from 'vue'
-import { RouterLink } from 'vue-router'
+import { ref, computed } from "vue";
+import { RouterLink, useRouter } from "vue-router";
+import { useAuthStore } from "../../store/authStore.js";
 
-const drawer = ref(false)
+const drawer = ref(false);
+const router = useRouter();
+const auth = useAuthStore();
 
 const links = [
-  { label: 'Book Flight', to: '/booking' },
-  { label: 'Manage Booking', to: '/manage' },
-]
+  { label: "Book Flight", to: "/booking" },
+  { label: "Manage Booking", to: "/manage" },
+];
+
+// Computed auth state
+const isLoggedIn = computed(() => auth.isAuthenticated);
+const isAdmin = computed(() => auth.isAdmin);
+
+// Logout handler
+function handleLogout() {
+  auth.logout(); // assuming your authStore has a logout() action
+  router.push("/");
+}
 </script>
 
 <template>
@@ -29,9 +42,9 @@ const links = [
         </div>
       </RouterLink>
 
-      <v-spacer/>
+      <v-spacer />
 
-      <!-- Right: Nav Links + Login (DESKTOP ONLY) -->
+      <!-- Right: Nav Links + Auth Buttons (DESKTOP ONLY) -->
       <div class="d-none d-md-flex items-center gap-2">
         <v-btn
             v-for="link in links"
@@ -42,12 +55,40 @@ const links = [
         >
           {{ link.label }}
         </v-btn>
+
+        <!-- Show when NOT logged in -->
         <v-btn
+            v-if="!isLoggedIn"
             to="/login"
             class="bg-primary font-semibold text-white px-4 bg-blue-500 hover:bg-blue-600 rounded-lg shadow-md ml-2 transition-transform transform hover:scale-105"
         >
           Login &amp; Registration
         </v-btn>
+
+        <!-- Show when logged in -->
+        <template v-else>
+          <v-btn
+              v-if="isAdmin"
+              to="/admin"
+              class="text-gray-800 hover:text-blue-500 font-medium text-base px-4"
+          >
+            Admin Dashboard
+          </v-btn>
+
+          <v-btn
+              to="/account"
+              class="text-gray-800 hover:text-blue-500 font-medium text-base px-4"
+          >
+            My Account
+          </v-btn>
+
+          <v-btn
+              @click="handleLogout"
+              class="bg-red-500 hover:bg-red-600 text-black font-semibold px-4 rounded-lg shadow-md ml-2 transition-transform transform hover:scale-105"
+          >
+            Logout
+          </v-btn>
+        </template>
       </div>
     </div>
 
@@ -56,11 +97,7 @@ const links = [
   </v-app-bar>
 
   <!-- Mobile Drawer -->
-  <v-navigation-drawer
-      v-model="drawer"
-      temporary
-      location="right"
-  >
+  <v-navigation-drawer v-model="drawer" temporary location="right">
     <v-list density="comfortable">
       <v-list-item
           v-for="link in links"
@@ -73,11 +110,42 @@ const links = [
 
       <v-divider class="my-2" />
 
-      <v-list-item to="/login" @click="drawer = false">
+      <!-- Mobile auth buttons -->
+      <v-list-item
+          v-if="!isLoggedIn"
+          to="/login"
+          @click="drawer = false"
+      >
         <v-list-item-title class="font-medium text-blue-600">
           Login &amp; Registration
         </v-list-item-title>
       </v-list-item>
+
+      <template v-else>
+        <v-list-item
+            v-if="isAdmin"
+            to="/admin"
+            @click="drawer = false"
+        >
+          <v-list-item-title>Admin Dashboard</v-list-item-title>
+        </v-list-item>
+
+        <v-list-item
+            to="/account"
+            @click="drawer = false"
+        >
+          <v-list-item-title>My Account</v-list-item-title>
+        </v-list-item>
+
+        <v-list-item
+            @click="
+            handleLogout();
+            drawer = false;
+          "
+        >
+          <v-list-item-title class="text-red-600 font-medium">Logout</v-list-item-title>
+        </v-list-item>
+      </template>
     </v-list>
   </v-navigation-drawer>
 </template>
